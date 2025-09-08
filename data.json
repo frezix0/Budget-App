@@ -1,0 +1,13 @@
+[
+    {
+        "nama_budget" : "Makan",
+        "total" : 100000,
+        "pengeluaran" : [
+            {
+            "nama_pengeluaran" : "Bakso",
+            "tanggal" : "16-11-2025",
+            "jumlah" : 12000
+            }
+        ]
+    }
+]

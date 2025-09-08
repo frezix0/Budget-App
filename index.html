@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget App</title>
+
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css"/>
+
+    <!--Icons-->
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+</head>
+
+<body>
+    <div id="notification" class="notification_wrapper"></div>
+    <header class="container">
+        <img src="img/bag.png" alt="icon bag"/>
+        <h1>BudgetApp.</h1>
+    </header>
+
+    <main id="budgets" class="container budget"></main>
+    <main id="budget_details" class="container hidden">
+        <button class="back_home">
+            <i class="ph ph-caret-left icon_back"></i>
+            Halaman Utama
+        </button>
+
+        <div class="budget_card">
+            <div class="">
+                <h2 class="budget_name">Makan</h2>
+                <p class="budget_amount">Rp100.000</p>
+                <p class="budget_total">Total Rp.1.000.000</p>
+            </div>
+            <div class="edit_pencil">
+                <i class="ph ph-pencil-simple icon_pencil"></i>
+            </div>
+        </div>
+        <button class="add_spent"><span>+</span> Tambah Pengeluaran </button>
+        <div class="sort_spent">
+            <i class="ph ph-arrows-down-up"></i>
+            <select>
+                <option>Tanggal Terbaru</option>
+                <option>Nama</option>
+                <option>Terkecil</option>
+                <option>Terbesar</option>
+            </select>
+        </div>
+        <div class="spent">
+            <div class="spent_item">
+                <div class="spent_item_description">
+                    <h4>Bakso</h4>
+                    <p>2025/11/16</p>
+                </div>
+                <div class="spent_item_price">
+                    <p>Rp 12.000</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="budget_form" class="modal hidden">
+        <div class="card">
+            <div class="modal_card_heading">
+                <h4>Tambah Budget</h4>
+                <i class="ph-fill ph-x-circle"></i>
+            </div>
+            <form>
+                <label for="">Nama Budget</label>
+                <input required name="nama_budget" type="text"/>
+                <label for="">Jumlah Budget</label>
+                <div class="input_money">
+                    <span>Rp</span>
+                    <input required name="total" type="number"/>
+                </div>
+                <button>Simpan</button>
+            </form>
+        </div>
+    </div>
+    <div id="spent_form" class="modal hidden">
+        <div class="card">
+            <div class="modal_card_heading">
+                <h4>Tambah Pengeluaran</h4>
+                <i class="ph-fill ph-x-circle"></i>
+            </div>
+            <form>
+                <label for="">Nama Pengeluaran</label>
+                <input required name ="nama_pengeluaran" type="text"/>
+                <label for="">Jumlah Pengeluaran</label>
+                <div class="input_money">
+                    <span>Rp</span>
+                    <input required name="jumlah" type="number"/>
+                </div>
+                <label for="">Tanggal</label>
+                <input required name="tanggal" type="date"/>
+                <button>Simpan</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
