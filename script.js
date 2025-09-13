@@ -16,7 +16,7 @@ checkSystemTheme();
 function checkSystemTheme() {
     const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-    if(darkTheme.matches) {
+    if (darkTheme.matches) {
         body.classList.add("dark");
         document.getElementById("light_theme").classList.add("hidden");
         document.getElementById("dark_theme").classList.remove("hidden");
@@ -24,10 +24,10 @@ function checkSystemTheme() {
 }
 
 document.getElementById("theme_switch").addEventListener("click", (e) => {
-    if(body.classList.contains("dark")) {
+    if (body.classList.contains("dark")) {
         document.getElementById("light_theme").classList.remove("hidden");
         document.getElementById("dark_theme").classList.add("hidden");
-    }else{
+    } else {
         document.getElementById("light_theme").classList.add("hidden");
         document.getElementById("dark_theme").classList.remove("hidden");
     }
@@ -135,13 +135,16 @@ function renderPengeluaran(budgetId, sortBy) {
 }
 
 function sortPengeluaran(pengeluaran, indexData, type) {
+    if (!pengeluaran) {
+        return [];
+    }
     let perubahan = 0;
 
     do {
         perubahan = 0;
         for (let i = 0; i < pengeluaran.length - 1; i++) {
             const leftData = indexData == "jumlah" ? +pengeluaran[i][indexData] : pengeluaran[i][indexData];
-            const rightData = indexData == "jumlah" ? +pengeluaran[i+1][indexData] : pengeluaran[i+1][indexData]
+            const rightData = indexData == "jumlah" ? +pengeluaran[i + 1][indexData] : pengeluaran[i + 1][indexData]
             if (
                 (type == "asc" &&
                     leftData > rightData) ||
