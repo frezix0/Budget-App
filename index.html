@@ -26,9 +26,13 @@
     />
 </head>
 
-<body>
+<body class="">
     <div id="notification" class="notification_wrapper"></div>
     <header class="container">
+        <button id="theme_switch" class="theme_switch">
+            <i id="dark_theme" class="ph-fill ph-moon hidden"></i>
+            <i id="light_theme" class="ph-fill ph-sun"></i>
+        </button>
         <img src="img/bag.png" alt="icon bag"/>
         <h1>BudgetApp.</h1>
     </header>
@@ -53,24 +57,14 @@
         <button class="add_spent"><span>+</span> Tambah Pengeluaran </button>
         <div class="sort_spent">
             <i class="ph ph-arrows-down-up"></i>
-            <select>
-                <option>Tanggal Terbaru</option>
-                <option>Nama</option>
-                <option>Terkecil</option>
-                <option>Terbesar</option>
+            <select id="sort_pengeluaran">
+                <option selected value="tanggal|dsc">Tanggal Terbaru</option>
+                <option value="nama_pengeluaran|asc">Nama</option>
+                <option value="jumlah|asc">Terkecil</option>
+                <option value="jumlah|dsc">Terbesar</option>
             </select>
         </div>
-        <div class="spent">
-            <div class="spent_item">
-                <div class="spent_item_description">
-                    <h4>Bakso</h4>
-                    <p>2025/11/16</p>
-                </div>
-                <div class="spent_item_price">
-                    <p>Rp 12.000</p>
-                </div>
-            </div>
-        </div>
+        <div class="spent"></div>
     </main>
 
     <!-- Modal -->
@@ -81,14 +75,20 @@
                 <i class="ph-fill ph-x-circle"></i>
             </div>
             <form>
-                <label for="">Nama Budget</label>
-                <input required name="nama_budget" type="text"/>
-                <label for="">Jumlah Budget</label>
+                <input type="hidden" id="budget_id"/>
+                <label for="nama_budget">Nama Budget</label>
+                <input id = "nama_budget" required name="nama_budget" type="text"/>
+                <label for="total_budget">Jumlah Budget</label>
                 <div class="input_money">
                     <span>Rp</span>
-                    <input required name="total" type="number"/>
+                    <input id ="total_budget" required name="total" type="number"/>
                 </div>
-                <button>Simpan</button>
+                <div class="action">
+                    <button id="delete_budget" type="button" class="danger">
+                        <i class="ph-fill ph-trash"></i>
+                    </button>
+                    <button type="submit">Simpan</button>
+                </div>
             </form>
         </div>
     </div>
@@ -99,20 +99,26 @@
                 <i class="ph-fill ph-x-circle"></i>
             </div>
             <form>
-                <label for="">Nama Pengeluaran</label>
-                <input required name ="nama_pengeluaran" type="text"/>
-                <label for="">Jumlah Pengeluaran</label>
+                <input type="hidden" id="id_pengeluaran">
+                <label for="nama_pengeluaran">Nama Pengeluaran</label>
+                <input id="nama_pengeluaran" required name ="nama_pengeluaran" type="text"/>
+                <label for="jumlah_pengeluaran">Jumlah Pengeluaran</label>
                 <div class="input_money">
                     <span>Rp</span>
-                    <input required name="jumlah" type="number"/>
+                    <input id="jumlah_pengeluaran" required name="jumlah" type="number"/>
                 </div>
-                <label for="">Tanggal</label>
-                <input required name="tanggal" type="date"/>
-                <button>Simpan</button>
+                <label for="tanggal_pengeluaran">Tanggal</label>
+                <input id = "tanggal_pengeluaran" required name="tanggal" type="date"/>
+                <div class="action">
+                    <button id="delete_pengeluaran" type="button" class="danger">
+                        <i class="ph-fill ph-trash"></i>
+                    </button>
+                    <button type="submit">Simpan</button>
+                </div>
             </form>
         </div>
     </div>
 
-    <script src="./script.js"></script>
+    <script type="module" src="./script.js"></script>
 </body>
 </html>

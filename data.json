@@ -1,9 +1,11 @@
 [
     {
+        "id" : 1234556,
         "nama_budget" : "Makan",
         "total" : 100000,
         "pengeluaran" : [
             {
+            "id" : 123455,
             "nama_pengeluaran" : "Bakso",
             "tanggal" : "16-11-2025",
             "jumlah" : 12000

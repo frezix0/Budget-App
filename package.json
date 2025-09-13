@@ -1,0 +1,25 @@
+{
+  "name": "budget-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frezix0/Budget-App.git"
+  },
+  "author": "Marsya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frezix0/Budget-App/issues"
+  },
+  "homepage": "https://github.com/frezix0/Budget-App#readme",
+  "dependencies": {
+    "vite": "^7.1.5"
+  }
+}
